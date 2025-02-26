@@ -41,7 +41,12 @@ public class Password {
     public static String bruteForce6Digit(String targetHash) {
 
         // Code here
-
+        for (int i=0; i<=999999; i++){
+            String mdp = String.format("%06d", i);
+            if (hashPassword(mdp).equals(targetHash)){
+                return mdp;
+            }
+        }
         return null;
     }
 
